@@ -2218,12 +2218,11 @@ main(int argc, char **argv)
 	product_set_interface(OPT(topless) ? "Topless" : GTA_INTERFACE);
 
 	if (compat_is_superuser()) {
-		fprintf(stderr,
-			"Never ever run %s as root! You may use:\n\n", getprogname());
-		fprintf(stderr,
-			"    su - username -c '%s --daemonize'\n\n", getprogname());
-		fprintf(stderr, "where 'username' stands for a regular user name.\n");
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "You shouldn't run %s as root!\n", getprogname());
+	// 	fprintf(stderr,
+	// 		"    su - username -c '%s --daemonize'\n\n", getprogname());
+	// 	fprintf(stderr, "where 'username' stands for a regular user name.\n");
+	// 	exit(EXIT_FAILURE);
 	}
 
 	/* Disable walloc() and halloc() if we're going to supervise */
